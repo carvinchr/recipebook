@@ -13,6 +13,8 @@ resolve(route:ActivatedRouteSnapshot, state:RouterStateSnapshot){
     return this.dataStorageService.FetchRecipes();
     if (recipes.length===0){
         return this.dataStorageService.FetchRecipes();
+        console.log("from recolve-service")
+
     }
     else{
         return recipes;

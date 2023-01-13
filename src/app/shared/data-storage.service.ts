@@ -21,7 +21,7 @@ storeRecipes()
 
     //    console.log(response);
     //});
-    this.http.get('https://localhost:44328/api/recipe?pageNumber=1&pageSize=8').subscribe(response=>{
+    this.http.get('https://localhost:44328/api/recipe?pageNumber=1&pageSize=10').subscribe(response=>{
         //this.recipeService.setRecipes(response);
         console.log('from storerecipes')
     });
@@ -53,11 +53,11 @@ getallrecipes(){
 
   FetchRecipes(){
     //this.http.get('https://localhost:44328/api/recipe?pageNumber=1&pageSize=8').subscribe(response=>{console.log(response)    });
-    console.log('from datastorage service')
+    console.log('from datastorage service-FetchRecipes')
 
     return this.http
       .get<Recipe[]>(
-        'https://localhost:44328/api/recipe?pageNumber=1&pageSize=8'
+        'https://localhost:44328/api/recipe?pageNumber=1&pageSize=10'
       )
       .pipe(
         map(recipes => {

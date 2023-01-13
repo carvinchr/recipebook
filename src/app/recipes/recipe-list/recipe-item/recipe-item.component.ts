@@ -8,9 +8,11 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
+  [x: string]: any;
   @Input() recipe: Recipe;
   @Input() index: number;
 
   ngOnInit() {
+
   }
 }

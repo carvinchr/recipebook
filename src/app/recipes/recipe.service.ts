@@ -20,17 +20,12 @@ export class RecipeService {
   }
 
   getRecipes() {
-    //this.http
-    //  .get('https://localhost:44328/api/recipe?pageNumber=1&pageSize=8')
-    //  .subscribe((response:any)=>{
-    //    this.recipes=response
-    //    return this.recipes
-    //})
-    console.log('from recipe service')
+    console.log('from recipe service-getRecipes')
     return this.recipes.slice();
   }
 
   getRecipe(index: number) {
+    console.log('from recipe service-getRecipe')
     return this.recipes[index];
   }
   getRecipeid(index: number) {
@@ -54,11 +49,11 @@ export class RecipeService {
   updateRecipe(index: number, newRecipe: Recipe) {
     this.http.put('https://localhost:44328/api/recipe/Putrecipes?id='+this.recipes[index].id,newRecipe)
     .subscribe(response=>{
-        //console.log(response);
     });
     this.recipes[index] = newRecipe;
     console.log(newRecipe)
     this.recipesChanged.next(this.recipes.slice());
+    console.log(this.recipes.slice())
   }
 
   deleteRecipe(recipeid: number,index:number) {
@@ -68,5 +63,6 @@ export class RecipeService {
     });
     this.recipes.splice(index, 1);
     this.recipesChanged.next(this.recipes.slice());
+    
   }
 }

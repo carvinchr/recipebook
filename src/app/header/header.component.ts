@@ -11,12 +11,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(){
     this.dataStorageservice.FetchRecipes().subscribe();
+    console.log("from header-compo")
+
   }
 
   onSaveData()
   {
     this.dataStorageservice.storeRecipes();
-    console.log("from header-compo")
   }
   onFetchData(){
 

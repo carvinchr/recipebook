@@ -13,6 +13,7 @@ import { DataStorageService } from 'src/app/shared/data-storage.service';
 export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
   subscription: Subscription;
+  dataStorageservice: any;
 
   constructor(private recipeService: RecipeService,
               private datastorageService: DataStorageService,
@@ -21,7 +22,9 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    //this.datastorageService.getallrecipes()
+    console.log("recipelist-compnent-ngOnit")
+
+    //this.dataStorageservice.FetchRecipes().subscribe();
     this.subscription = this.recipeService.recipesChanged
       .subscribe(
         (recipes: Recipe[]) => {

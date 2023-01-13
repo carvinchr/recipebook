@@ -25,6 +25,8 @@ export class RecipeEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("recipeedit-compnent-ngOnit")
+
     this.route.params
       .subscribe(
         (params: Params) => {
